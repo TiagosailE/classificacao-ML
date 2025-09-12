@@ -1,67 +1,65 @@
-# 📌 Classificação com Machine Learning – Dataset Breast Cancer
+# 📊 Classificação com Machine Learning – Dataset Breast Cancer
 
-## 👨‍🏫 Disciplina
-Inteligência Artificial  
-Professor: Ronierison de Souza Maciel  
-Aluno: Tiago Elias dos Santos 
-Curso: Sistemas de Informação – VI Período, Noturno  
+## 👤 Autor
+- Nome: Tiago Elias dos Santos Jovencio
+- Disciplina: Inteligência Artificial
+- Professor: Ronierison de Souza Maciel
+- Curso: Sistemas de Informação – VI Período, Noturno
 
 ---
 
 ## 🎯 Objetivo da Atividade
-Implementar e comparar algoritmos de classificação supervisionada utilizando um dataset real, aplicando técnicas de pré-processamento, modelagem e avaliação de desempenho.
+Implementar e comparar algoritmos de **classificação supervisionada** utilizando um dataset real, aplicando:
+- Pré-processamento
+- Modelagem
+- Avaliação de desempenho
+
+Os resultados devem ser versionados em um repositório no GitHub, com commits graduais e descritivos.
 
 ---
 
-## 📊 Dataset Escolhido
-- **Fonte:** `sklearn.datasets.load_breast_cancer`  
-- **Descrição:** O dataset contém características de tumores de mama, utilizados para prever se são **malignos (1)** ou **benignos (0)**.  
-- **Tamanho:** 569 amostras × 30 features.  
-- **Variável alvo:** diagnóstico (`maligno` ou `benigno`).  
-- **Features:** raio, textura, perímetro, área, suavidade, compacidade, concavidade, simetria, entre outros.  
+## 📂 Dataset Utilizado
+- Fonte: `sklearn.datasets.load_breast_cancer`
+- Tamanho: **569 amostras × 30 features**
+- Variável alvo: diagnóstico do tumor (`0 = maligno`, `1 = benigno`)
+- Features: medidas obtidas de exames de mama (raio médio, textura, perímetro, área, suavidade etc.)
 
 **Justificativa da escolha:**  
-É um dataset clássico e muito utilizado em Machine Learning. Ele é balanceado, tem apenas duas classes (classificação binária), e contém variáveis numéricas que permitem aplicar diferentes algoritmos.
+É um dataset clássico, balanceado e de tamanho adequado para experimentos de aprendizado de máquina supervisionado.
 
 ---
 
-## ⚙️ Etapas Realizadas
-### 🔹 4.2 – Preparação dos Dados
-- Carregamento e exploração inicial (`head`, `info`, `describe`).  
-- Separação entre atributos (`X`) e variável alvo (`y`).  
-- Divisão em treino e teste com `train_test_split`.  
+## ⚙️ Modelos de Classificação
+Foram testados três algoritmos:
 
-### 🔹 4.3 – Modelagem
-Foram treinados e avaliados três algoritmos:
-- DecisionTreeClassifier  
-- KNeighborsClassifier  
-- LogisticRegression  
-
-Métricas avaliadas:
-- Acurácia  
-- Precisão  
-- Recall  
-- F1-score  
-- Matriz de confusão  
-
-Foi gerado também um **gráfico comparativo de acurácia** entre os modelos.
-
-### 🔹 4.4 – Conclusão
-O modelo com melhor desempenho foi a **Logistic Regression**, que atingiu a maior acurácia entre os três algoritmos.  
-Esse resultado faz sentido, pois o dataset é relativamente bem separado linearmente, o que favorece modelos lineares.  
-
-Possíveis melhorias:
-- Aplicar normalização dos dados (melhora o desempenho do KNN).  
-- Realizar tuning de hiperparâmetros (GridSearchCV ou RandomizedSearchCV).  
-- Testar outros algoritmos, como Random Forest e SVM.  
+1. **Decision Tree**  
+2. **K-Nearest Neighbors (KNN)**  
+3. **Logistic Regression**  
 
 ---
 
-## 📈 Resultados Obtidos (exemplo)
-- **Decision Tree:** Acurácia ≈ 0.91  
-- **KNN:** Acurácia ≈ 0.88  
-- **Logistic Regression:** Acurácia ≈ 0.95  
+## 📈 Resultados Obtidos
 
-> ⚠️ Os valores podem variar um pouco devido à aleatoriedade da divisão entre treino e teste.
+### Métricas principais (dados de teste)
+| Modelo               | Acurácia | Precisão | Recall | F1-Score |
+|----------------------|----------|----------|--------|----------|
+| Decision Tree        | ~0.918   | ~0.919   | ~0.918 | ~0.918   |
+| KNN                  | ~0.930   | ~0.931   | ~0.930 | ~0.930   |
+| Logistic Regression  | ~0.959   | ~0.960   | ~0.959 | ~0.959   |
 
+### Comparação de acurácia
+O gráfico gerado no notebook mostra que **Logistic Regression** obteve o melhor desempenho.
+
+---
+
+## 📝 Conclusão
+- O melhor modelo foi a **Regressão Logística**, com maior acurácia.  
+- Isso faz sentido, pois o dataset é majoritariamente linearmente separável.  
+- O KNN teve desempenho próximo, mas poderia melhorar com normalização dos dados.  
+- Árvores de decisão também se saíram bem, mas com menor precisão.  
+
+**Possíveis melhorias:**
+- Normalização das features (especialmente útil para KNN).  
+- Ajuste de hiperparâmetros via Grid Search.  
+- Testar outros algoritmos, como Random Forest ou SVM.  
 
