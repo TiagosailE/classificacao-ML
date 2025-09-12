@@ -1,0 +1,25 @@
+1. Classificação supervisionada
+
+Classificação supervisionada é um tipo de aprendizado de máquina em que o algoritmo aprende a prever uma categoria ou rótulo a partir de dados que já possuem essas categorias conhecidas. Ou seja, o modelo “treina” com exemplos onde a resposta correta já é conhecida, e depois tenta aplicar esse aprendizado a novos dados.
+
+Exemplo simples: Você tem um conjunto de frutas com características (peso, cor, textura) e sabe o nome de cada fruta. O modelo aprende a relacionar essas características ao rótulo (maçã, banana, laranja) e depois consegue classificar frutas novas que nunca viu antes.
+
+2. Importância de dividir o dataset em treino e teste
+
+Dividir o dataset é essencial para avaliar se o modelo realmente aprendeu ou se apenas decorou os dados (overfitting).
+
+Treino: Usado para ensinar o modelo, ou seja, ajustar seus parâmetros com base nos exemplos conhecidos.
+
+Teste: Usado para verificar como o modelo se sai com dados que ele nunca viu antes, simulando situações reais.
+
+Sem essa divisão, você não teria como saber se o modelo generaliza bem para casos novos.
+
+3. Diferença entre Decision Tree e KNN
+
+Embora ambos sejam usados para classificação, eles funcionam de maneiras bem diferentes:
+
+Aspecto	Decision Tree (Árvore de Decisão)	KNN (K-Nearest Neighbors)
+Como funciona	Cria regras em forma de árvore (perguntas do tipo “se… então…”) para separar os dados em categorias.	Analisa os k vizinhos mais próximos de um novo ponto e classifica baseado na maioria das categorias desses vizinhos.
+Treinamento	Treinamento constrói a árvore e define as regras de decisão.	“Treinamento” é basicamente armazenar os dados; não há construção de modelo complexo.
+Velocidade	Treinamento pode ser mais pesado, mas a previsão é rápida.	Treinamento é rápido, mas a previsão pode ser lenta se houver muitos dados.
+Explicabilidade	Fácil de entender e visualizar.	Mais difícil de interpretar, pois depende da comparação com muitos pontos.
